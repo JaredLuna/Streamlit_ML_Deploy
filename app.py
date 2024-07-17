@@ -3,14 +3,10 @@ import joblib
 import nltk
 from nltk.corpus import stopwords
 from sklearn.metrics import accuracy_score
-from sklearn.linear_model import LogisticRegression
-from sklearn.multiclass import OneVsRestClassifier
 from sklearn.model_selection import train_test_split
-from sklearn.feature_extraction.text import TfidfVectorizer
 import pandas as pd
 from surprise import Dataset, Reader
 from surprise.model_selection import train_test_split
-from gensim import corpora
 import re
 import warnings
 
