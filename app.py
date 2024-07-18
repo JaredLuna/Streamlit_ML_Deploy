@@ -17,26 +17,26 @@ import os
 base_dir = os.path.dirname(os.path.abspath(__file__))
 
 #Sentimiento
-modelo_Sentiment_path = os.path.join(base_dir, '..', 'Sentiment', 'Modelo_Sentiment.joblib')
-vectorizador_Sentiment_path = os.path.join(base_dir, '..', 'Sentiment', 'Vectorizador_Sentiment.joblib')
+modelo_Sentiment_path = os.path.join(base_dir,  'Sentiment', 'Modelo_Sentiment.joblib')
+vectorizador_Sentiment_path = os.path.join(base_dir,  'Sentiment', 'Vectorizador_Sentiment.joblib')
 
 #Recomendacion
-modelo_recomendacion_path = os.path.join(base_dir, '..', 'SistemaRecomendacion', 'Model_Recomendation.joblib')
+modelo_recomendacion_path = os.path.join(base_dir,  'SistemaRecomendacion', 'Model_Recomendation.joblib')
 
 #Cargar los datos del dataset
-data_path = os.path.join(base_dir, '..', 'Data', 'gmap_meta_reviews_sentiment.parquet')
+data_path = os.path.join(base_dir,  'Data', 'gmap_meta_reviews_sentiment.parquet')
 
 #Prediccion Ratin
-modelo_rating_path = os.path.join(base_dir, '..', 'Rating', 'Modelo_Rating_Logistic.joblib')
-vectorizador_rating_path = os.path.join(base_dir, '..', 'Rating', 'Vectorizador_Rating.joblib')
+modelo_rating_path = os.path.join(base_dir,  'Rating', 'Modelo_Rating_Logistic.joblib')
+vectorizador_rating_path = os.path.join(base_dir,  'Rating', 'Vectorizador_Rating.joblib')
 
 #Reviews Falsas
-modelo_fakerevs_path = os.path.join(base_dir, '..', 'FakeRevs', 'Modelo_Rating_Logistic.joblib')
-vectorizador_fakerevs_path = os.path.join(base_dir, '..', 'FakeRevs', 'Modelo_Rating_Logistic.joblib')
+modelo_fakerevs_path = os.path.join(base_dir,  'FakeRevs', 'Modelo_Rating_Logistic.joblib')
+vectorizador_fakerevs_path = os.path.join(base_dir,  'FakeRevs', 'Modelo_Rating_Logistic.joblib')
 
 #Reviews Classifier
-modelo_revsclass_path = os.path.join(base_dir, '..', 'ReviewsClasifier', 'Modelo_RevClasifier.joblib')
-vectorizador_revsclass_path = os.path.join(base_dir, '..', 'ReviewsClasifier', 'Vectorizador_RevClasifier.joblib')
+modelo_revsclass_path = os.path.join(base_dir,  'ReviewsClasifier', 'Modelo_RevClasifier.joblib')
+vectorizador_revsclass_path = os.path.join(base_dir,  'ReviewsClasifier', 'Vectorizador_RevClasifier.joblib')
 
 # Cosas adicionales que necesitamos para los modelos de ML
 nltk.download('stopwords')
