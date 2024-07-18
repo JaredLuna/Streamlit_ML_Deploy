@@ -1,8 +1,0 @@
-gensim
-joblib
-nltk
-pandas
-scikit_learn
-scikit_surprise
-streamlit
-surprise
