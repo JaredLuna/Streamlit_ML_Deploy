@@ -1,8 +1,8 @@
 joblib
 nltk
 pandas
-scikit_learn
-scikit_surprise
+scikit-learn
+scikit-surprise
 streamlit
 surprise
 numpy
