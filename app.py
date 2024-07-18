@@ -31,8 +31,8 @@ modelo_rating_path = os.path.join(base_dir,  'Rating', 'Modelo_Rating_Logistic.j
 vectorizador_rating_path = os.path.join(base_dir,  'Rating', 'Vectorizador_Rating.joblib')
 
 #Reviews Falsas
-modelo_fakerevs_path = os.path.join(base_dir,  'FakeRevs', 'Modelo_Rating_Logistic.joblib')
-vectorizador_fakerevs_path = os.path.join(base_dir,  'FakeRevs', 'Modelo_Rating_Logistic.joblib')
+modelo_fakerevs_path = os.path.join(base_dir,  'FakeRevs', 'Modelo_FakeRevs.joblib')
+vectorizador_fakerevs_path = os.path.join(base_dir,  'FakeRevs', 'Vectorizador_FakeRevs.joblib')
 
 #Reviews Classifier
 modelo_revsclass_path = os.path.join(base_dir,  'ReviewsClasifier', 'Modelo_RevClasifier.joblib')
