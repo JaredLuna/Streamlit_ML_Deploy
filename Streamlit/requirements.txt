@@ -1,8 +1,7 @@
-joblib
-nltk
-pandas
-scikit-learn
-scikit-surprise
-streamlit
-surprise
-numpy
+numpy==1.21.2
+joblib==1.2.0
+nltk==3.6.5
+pandas==1.3.3
+scikit-learn==1.0
+streamlit==1.0.0
+scikit-surprise==1.1.1
