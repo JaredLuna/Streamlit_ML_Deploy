@@ -9,6 +9,22 @@ from surprise import Reader
 from surprise.model_selection import train_test_split
 import re
 import warnings
+import os
+
+# Para el manejo de path creamos esta ruta
+# Obtener la ruta absoluta del archivo
+#Path base
+base_dir = os.path.dirname(os.path.abspath(__file__))
+
+#Sentimiento
+modelo_Sentiment_path = os.path.join(base_dir, '..', 'Sentiment', 'Modelo_Sentiment.joblib')
+vectorizador_Sentiment_path = os.path.join(base_dir, '..', 'Sentiment', 'Vectorizador_Sentiment.joblib')
+
+#Recomendacion
+modelo_recomendacion_path = os.path.join(base_dir, '..', 'SistemaRecomendacion', 'Model_Recomendation.joblib')
+
+#Cargar los datos del dataset
+data_path = os.path.join(base_dir, '..', 'Data', 'gmap_meta_reviews_sentiment.parquet')
 
 # Cosas adicionales que necesitamos para los modelos de ML
 nltk.download('stopwords')
@@ -20,13 +36,15 @@ warnings.filterwarnings('ignore', message='X does not have valid feature names')
 # ------------------------------- Cargar modelos y datos --------------------------
 
 ## Modelo Analisis de sentimiento...
-modelo_sentiment = joblib.load('..\\Sentiment\\Modelo_Sentiment.joblib')
-vectorizador_sentiment = joblib.load('..\\Sentiment\\Vectorizador_Sentiment.joblib')
+#modelo_sentiment = joblib.load('..\\Sentiment\\Modelo_Sentiment.joblib')
+#vectorizador_sentiment = joblib.load('..\\Sentiment\\Vectorizador_Sentiment.joblib')
+modelo_sentiment = joblib.load(modelo_Sentiment_path)
+vectorizador_sentiment = joblib.load(vectorizador_Sentiment_path)
 
 
 ## Modelo Recomendaciones...
 #Cargamos nuestro modelo:
-modelo_recomendation = joblib.load('..\\SistemaRecomendacion\\Model_Recomendation.joblib')
+modelo_recomendation = joblib.load(modelo_recomendacion_path)
 
 # Cargar el dataset
 df_recomendation = pd.read_parquet('..\\Data\\gmap_meta_reviews_sentiment.parquet', engine= 'pyarrow')
