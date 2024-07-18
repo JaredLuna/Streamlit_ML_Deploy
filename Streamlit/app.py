@@ -11,7 +11,7 @@ import re
 import warnings
 import os
 
-# Para el manejo de path creamos esta ruta
+# -------------------------------- Establecemos paths relativos -----------------------------------------
 # Obtener la ruta absoluta del archivo
 #Path base
 base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -25,6 +25,18 @@ modelo_recomendacion_path = os.path.join(base_dir, '..', 'SistemaRecomendacion',
 
 #Cargar los datos del dataset
 data_path = os.path.join(base_dir, '..', 'Data', 'gmap_meta_reviews_sentiment.parquet')
+
+#Prediccion Ratin
+modelo_rating_path = os.path.join(base_dir, '..', 'Rating', 'Modelo_Rating_Logistic.joblib')
+vectorizador_rating_path = os.path.join(base_dir, '..', 'Rating', 'Vectorizador_Rating.joblib')
+
+#Reviews Falsas
+modelo_fakerevs_path = os.path.join(base_dir, '..', 'FakeRevs', 'Modelo_Rating_Logistic.joblib')
+vectorizador_fakerevs_path = os.path.join(base_dir, '..', 'FakeRevs', 'Modelo_Rating_Logistic.joblib')
+
+#Reviews Classifier
+modelo_revsclass_path = os.path.join(base_dir, '..', 'ReviewsClasifier', 'Modelo_RevClasifier.joblib')
+vectorizador_revsclass_path = os.path.join(base_dir, '..', 'ReviewsClasifier', 'Vectorizador_RevClasifier.joblib')
 
 # Cosas adicionales que necesitamos para los modelos de ML
 nltk.download('stopwords')
@@ -47,7 +59,7 @@ vectorizador_sentiment = joblib.load(vectorizador_Sentiment_path)
 modelo_recomendation = joblib.load(modelo_recomendacion_path)
 
 # Cargar el dataset
-df_recomendation = pd.read_parquet('..\\Data\\gmap_meta_reviews_sentiment.parquet', engine= 'pyarrow')
+df_recomendation = pd.read_parquet(data_path, engine= 'pyarrow')
 
 # Creamos un nuevo Dataframe para cambiar el nombre de unas columnas
 df_clean = pd.DataFrame()
@@ -72,20 +84,20 @@ trainset_recomendation, testset_recomendation = train_test_split(data_recomendat
 
 ## Modelo Rating Prediction
 #Cargamos los modelos al inicializar la API
-modelo_rating = joblib.load('..\\Rating\\Modelo_Rating_Logistic.joblib')
-vectorizador_rating = joblib.load('..\\Rating\\Vectorizador_Rating.joblib')
+modelo_rating = joblib.load(modelo_rating_path)
+vectorizador_rating = joblib.load(vectorizador_rating_path)
 
 
 ## Modelo Fake Reviews
 #Cargamos nuestros modelos y vectorizador
-modelo_fake_revs = joblib.load('..\\FakeRevs\\Modelo_FakeRevs.joblib')
-vectorizador_fake_revs = joblib.load('..\\FakeRevs\\Vectorizador_FakeRevs.joblib')
+modelo_fake_revs = joblib.load(modelo_fakerevs_path)
+vectorizador_fake_revs = joblib.load(vectorizador_fakerevs_path)
 
 
 ## Modelo Review Classifier
 # Cargamos los modelos
-modelo_rev_class = joblib.load('..\\ReviewsClasifier\\Modelo_RevClasifier.joblib')
-vectorizador_rev_class = joblib.load('..\\ReviewsClasifier\\Vectorizador_RevClasifier.joblib')
+modelo_rev_class = joblib.load(modelo_revsclass_path)
+vectorizador_rev_class = joblib.load(vectorizador_revsclass_path)
 
 
 # Funciones
