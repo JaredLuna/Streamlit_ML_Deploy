@@ -1,4 +1,5 @@
 pip==24.1.2
+protobuf==3.20.1
 setuptools==65.5.1
 wheel==0.41.0
 numpy == 1.26.3
