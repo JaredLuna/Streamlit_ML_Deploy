@@ -5,3 +5,4 @@ scikit_learn
 scikit_surprise
 streamlit
 surprise
+numpy
