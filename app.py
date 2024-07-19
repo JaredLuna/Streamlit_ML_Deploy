@@ -481,7 +481,10 @@ with st.container():
         )
         # Enlace de la visualización de Looker Studio
         # Enlace de la visualización de Looker Studio
-        looker_studio_url = "https://lookerstudio.google.com/u/0/reporting/a2b77bd1-2428-4682-be09-56533a248a94/page/p_pewigcs7id"
+        #nuevo dashoard
+        #looker_studio_url = "https://lookerstudio.google.com/u/0/reporting/a2b77bd1-2428-4682-be09-56533a248a94/page/p_pewigcs7id"
+        looker_studio_url = "https://lookerstudio.google.com/embed/reporting/92454d30-31b7-44b8-97ea-6e915c49483e/page/p_qndu6slwid"
+        
 
         # Utilizar un iframe para incrustar la visualización
         st.markdown(f'<iframe width="100%" height="600" src="{looker_studio_url}" frameborder="0" style="border:0" allowfullscreen></iframe>', unsafe_allow_html=True)
