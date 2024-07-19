@@ -47,6 +47,7 @@ image_2_path = os.path.join(path_images, '2.jpeg')
 image_3_path = os.path.join(path_images, '3.jpeg')
 image_4_path = os.path.join(path_images, '4.jpeg')
 image_5_path = os.path.join(path_images, '5.jpeg')
+image_6_path = os.path.join(path_images, '6.jpeg')
 image_logo_path = os.path.join(path_images, 'Logo.jpeg')
 image_fondo_path = os.path.join(path_images, 'Fondo.jpeg')
 
@@ -324,7 +325,7 @@ with st.container():
     st.write("##")
     image_column, text_column = st.columns((1,2))
     with image_column:
-        image = Image.open(image_1_path)
+        image = Image.open(image_6_path)
         st.image(image, use_column_width=True)
     with text_column:
         st.markdown("<h2 class='model-text'>Predicción de rating según la review</h2>",unsafe_allow_html=True)
@@ -480,7 +481,7 @@ with st.container():
         )
         # Enlace de la visualización de Looker Studio
         # Enlace de la visualización de Looker Studio
-        looker_studio_url = "https://lookerstudio.google.com/embed/reporting/92454d30-31b7-44b8-97ea-6e915c49483e/page/p_qndu6slwid"
+        looker_studio_url = "https://lookerstudio.google.com/u/0/reporting/a2b77bd1-2428-4682-be09-56533a248a94/page/p_pewigcs7id"
 
         # Utilizar un iframe para incrustar la visualización
         st.markdown(f'<iframe width="100%" height="600" src="{looker_studio_url}" frameborder="0" style="border:0" allowfullscreen></iframe>', unsafe_allow_html=True)
